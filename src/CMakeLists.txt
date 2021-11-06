@@ -18,6 +18,10 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
   set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 endif()
 
+if(WIN32)
+  set(CMAKE_CXX_FLAGS "/std:c++17")
+endif()
+
 find_package(Eigen3 3.3 REQUIRED NO_MODULE)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
